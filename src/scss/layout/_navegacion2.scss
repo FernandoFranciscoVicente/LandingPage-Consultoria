@@ -1,0 +1,149 @@
+/* ===== Barra sticky ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $azulOscuro;
+  backdrop-filter: saturate(120%) blur(4px); /* opcional, nice */
+}
+
+/* Contenedor del toggle + nav (visible en móvil) */
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 12px;
+  min-height: 56px;
+}
+
+/* Botón hamburguesa (solo móvil) */
+.nav-toggle {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .bars {
+    position: relative;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+  }
+  .bars::before,
+  .bars::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    transition: transform 250ms ease, opacity 250ms ease;
+  }
+  .bars::before { transform: translateY(-6px); }
+  .bars::after  { transform: translateY( 6px); }
+}
+
+/* ===== Menú (móvil): vertical colapsable ===== */
+.navegacion-principal {
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;                 /* colapsado por defecto */
+  transition: max-height 250ms ease;
+  display: grid;
+  grid-auto-rows: 1fr;           /* cada enlace “fila” */
+  border: 4px solid $blanco; /* separador */
+}
+
+.enlace-logo{
+  display: none;
+}
+
+.navegacion-principal .enlace,
+.navegacion-principal .enlace-logo {
+  align-items: center;
+  justify-content: center;
+  padding: 10px 8px;
+  color: $blanco;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  background-color: $azulOscuro;
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  transition: background .3s;
+  cursor: pointer;
+  font-family: 'AristaProAlternateLighttrial';
+  
+}
+
+.navegacion-principal .enlace-logo {
+  height: auto; width: 100%;
+  .logo { width: 160px; height: auto; display: block; }
+}
+
+.navegacion-principal a:hover {
+  background-color: darken($azulOscuro, 10%);
+}
+
+/* Estado ABIERTO en móvil (se controla con JS) */
+.nav-wrap.is-open .navegacion-principal {
+  max-height: 50%; /* espacio suficiente para mostrar los enlaces */
+}
+.nav-wrap.is-open .nav-toggle .bars {
+  background: transparent;
+}
+.nav-wrap.is-open .nav-toggle .bars::before { transform: rotate(45deg); }
+.nav-wrap.is-open .nav-toggle .bars::after  { transform: rotate(-45deg); }
+
+/* ===== DESKTOP (≥768px) ===== */
+@media (min-width: 768px) {
+  /* El wrapper “desaparece” del layout: el nav ocupa todo el ancho */
+  .nav-wrap { 
+    display: contents;   /* mantiene a sus hijos sin contenedor */
+  }
+
+  /* Ocultamos el botón en desktop */
+  .nav-toggle { display: none; }
+
+  /* Menú horizontal, sin colapso */
+  .navegacion-principal {
+    max-height: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 11rem;
+    border-top: 0;
+  }
+
+  .navegacion-principal .enlace,
+  .navegacion-principal .enlace-logo {
+    display: flex;
+    flex: 1;
+    padding: 1.5rem 0;
+    font-size: 3.2rem;
+    border-bottom: 0;
+    border-right: 4px solid $blanco; /* si quieres divisor lateral */
+    font-family: 'AristaProAlternateLighttrial';
+  }
+  .navegacion-principal .enlace-logo {
+    flex: 0 0 auto;
+    width: 40rem; height: 11.5rem; /* tus valores */
+    .logo { width: 65%; height: auto; }
+  }
+  .navegacion-principal a:last-child {
+    border-right: 0;
+  }
+}
+
+/* Respeta prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .navegacion-principal { transition: none; }
+  .nav-toggle .bars::before,
+  .nav-toggle .bars::after { transition: none; }
+}

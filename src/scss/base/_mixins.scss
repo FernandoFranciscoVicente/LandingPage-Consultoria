@@ -1,0 +1,74 @@
+/** Media Queries **/
+@mixin telefono {
+    @media (min-width: #{$telefono}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+@mixin grid($columnas, $espaciado) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+// Fuentes //
+
+@font-face {
+  font-family: "AristaProAlternateLighttrial";
+  src: url("/src/fonts/AristaProAlternateLighttrial.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ShantellSansSemiBold";
+  src: url("/src/fonts/ShantellSansSemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AristaProAlternateBoldtrial";
+  src: url("/src/fonts/AristaProAlternateBoldtrial.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "fonnts_comAcumin_Pro_SemiCondensed";
+  src: url("/src/fonts/fonnts_comAcumin_Pro_SemiCondensed.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Asignación de fuentes //
+h1 {
+  font-family: "ShantellSansSemiBold", sans-serif;
+}
+
+h2 {
+  font-family: "AristaProAlternateBoldtrial", sans-serif;
+}
+
+h3 {
+  font-family: "AristaProAlternateLighttrial", sans-serif;
+}
+
+p {
+  font-family: "fonnts_comAcumin_Pro_SemiCondensed", sans-serif;
+}

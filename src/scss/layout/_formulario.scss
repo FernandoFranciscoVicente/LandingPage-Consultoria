@@ -1,0 +1,143 @@
+/** Formulario **/
+
+.contenedor-seccion-diez{
+    width: 100%;
+    height: 73.2rem;
+    background-image: url(/build/img/bg-seccion10.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.contenedor-formulario{
+    background-color: cadetblue;
+    background-image:url();
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+}
+
+.contenido-formulario{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario label{
+    color: $blanco;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+.formulario{
+    max-width: 70rem;
+    width: 100%;    
+}
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    
+    label{
+        flex: 0 0 25rem;
+        white-space: nowrap;
+
+    }
+    input, textarea{
+        flex: 1;
+        border:none;
+        padding: 0.8rem;
+        border-radius: 1rem;
+        font-size: 1.6rem;
+        resize: vertical;
+        min-height: 4rem;
+
+    }
+}
+
+.campo:last-of-type textarea{
+    height: 10rem;
+}
+
+
+.boton-form{
+    flex:1;
+    background-color: $blanco;
+    color: $negro;
+    padding: 1rem 3.1rem 1rem 3.1rem;
+    text-decoration: none;
+    border-radius: 1rem;
+    margin-top:1rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer; 
+}
+
+@media (max-width: 767.98px){
+  .contenedor-seccion-diez{
+    height: auto;
+    display: block;
+    padding: 1.5rem 1.5rem 2rem;
+  }
+
+  .encabezado-contacto{
+    font-size: clamp(4rem, 6vw, 4rem);
+    padding-top: 6rem;
+    margin: 0 0 2rem 0;
+    color: $blanco;
+  }
+
+  .iconos-formulario{
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .formulario{ width: 100%; }
+
+  .campo{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: .4rem;
+    align-items: start;
+    margin-bottom: 1.1rem;
+  }
+
+  .campo label{
+    width: 100%;
+    text-align: left;
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+  }
+
+  .campo input, textarea{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: clamp(1.4rem, 4vw, 1.7rem);
+  }
+
+  .campo:last-of-type textarea{
+    height: 12rem;
+    margin-bottom: 2rem;
+  }
+
+  .boton-form{
+    display: block;
+    width: min(100%, 22rem);
+    padding: 1rem 2rem;
+    font-size: clamp(1.6rem, 5vw, 1.9rem);
+    border-radius: 1rem;
+    margin: .8rem auto 0;
+  }
+}

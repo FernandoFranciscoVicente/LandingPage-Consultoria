@@ -1,0 +1,175 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="build/css/app.css">
+</head>
+<body>
+
+<!--Navegación-->
+<header>
+  <div class="nav-wrap" id="site-nav">
+    <button class="nav-toggle" aria-controls="menu" aria-expanded="false"
+    aria-label="Abrir menú">
+    <span class="bars" aria-hidden="true"></span>
+  </button>
+    <nav class="navegacion-principal">
+      <a class="enlace" href="#transformacion">Transformación</a>
+      <a class="enlace" href="odoo">Con Odoo</a>
+      <a class="enlace" href="#presemtacion">Quienes somos</a>
+      <a class="enlace" href="#experiencia">Experiencia</a>
+      <a class="enlace-logo" href="#principal"><img class="logo" src="src/img/logo-nebula-nav.webp" alt="logotipo de Nebula"></a>
+      <a class="enlace" href="#tecnologias">Tecnologías</a>
+      <a class="enlace" href="#clientes">Clientes</a>
+      <a class="enlace" href="#nuestro-trabajo">Cómo trabajamos</a>
+      <a class="enlace" href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<!--Header-->
+<section class="hero" id="principal">
+    <div class="contenido-hero">
+        <h1 class="titulo-hero">
+            Lleva tu empresa al siguiente nivel con un solo <span class="manchaMorada">software</span>
+        </h1>
+
+        <div class="subcontenido-hero">
+          <h3 class="subtitulo-hero">
+            Centraliza tus procesos, reduce costos y toma 
+            decisiones con datos reales. La tecnología que impulsa 
+            resultados está aquí.
+          </h3>
+        </div>
+          <a class="boton-wsp" href="https://wa.me/521234567890" target="_blank">
+              <img class="icono-wsp" src="src/img/icono-wsp.webp" alt="icono de whatsapp">WhatsApp
+          </a>
+    </div>
+</section> 
+
+<!--Sección 1: Creamos-->
+<div class="contenedor-seccion-1">
+  
+</div>
+
+
+
+<!--Footer-->
+<footer class="footer">
+    <div class="footer-nav">
+        <a class="enlace-logo-footer" href="#principal"><img class="logo-footer" src="build/img/logo-footer.png" alt="logo"></a>
+        <a class="enlace-logo-footer" href="#presentacion"><img class="icono-footer" src="build/img/icono-footer-1.png" alt="icono de whatsapp"></a>
+        <a class="enlace-logo-footer" href="#transformacion"><img class="icono-footer" src="build/img/icono-footer-2.png" alt="icono de e-mail"></a>
+        <a class="enlace-logo-footer" href="#tecnologias"><img class="icono-footer" src="build/img/icono-footer-3.png" alt="icono de teléfono"></a>
+        <a class="enlace-logo-footer" href="#clientes"><img class="icono-footer" src="build/img/icono-footer-4.png" alt="icono de ubicacion"></a>
+    </div>
+</footer>
+
+
+<!--Scripts-->
+<script src="build/js/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<script>
+  //Aquí empieza
+  (function(){
+    const wrap = document.getElementById('site-nav');
+    const btn  = wrap.querySelector('.nav-toggle');
+    const menu = wrap.querySelector('.navegacion-principal');
+
+    function closeMenu(){
+      wrap.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Abrir menú');
+    }
+    function openMenu(){
+      wrap.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Cerrar menú');
+    }
+
+    btn.addEventListener('click', () => {
+      const open = wrap.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    });
+
+    // Cerrar al hacer click en un enlace (en móvil)
+    menu.addEventListener('click', (e) => {
+      if (e.target.closest('a')) closeMenu();
+    });
+
+    // Cerrar con ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  })();
+  //Hast aquí
+</script>
+
+
+<!--Suavizar el desplazamiento en navegadores incompatibles-->
+<script>
+  (function () {
+    const prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+      enlace.addEventListener('click', function (e) {
+        const destino = document.querySelector(this.getAttribute('href'));
+        if (!destino) return;
+
+        // Evitar el salto instantáneo del navegador
+        e.preventDefault();
+
+        // Desplazamiento suave (si el usuario no pide reducir movimiento)
+        destino.scrollIntoView({
+          behavior: prefiereMenosMovimiento ? 'auto' : 'smooth',
+          block: 'start'
+        });
+
+        // Actualizar la URL con el hash
+        history.pushState(null, '', this.getAttribute('href'));
+      });
+    });
+  })();
+  </script>
+
+    <script>
+    // Toggle accesible del menú
+    const header = document.querySelector('header');
+    const btn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('menu');
+
+    function closeMenu(){
+      header.classList.remove('nav-open');
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','Abrir menú');
+    }
+    function openMenu(){
+      header.classList.add('nav-open');
+      btn.setAttribute('aria-expanded','true');
+      btn.setAttribute('aria-label','Cerrar menú');
+    }
+
+    btn.addEventListener('click', () => {
+      const open = header.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    });
+
+    // Cierra al hacer click en un enlace (en móvil)
+    menu.addEventListener('click', (e) => {
+      if(e.target.closest('a')) closeMenu();
+    });
+
+    // Cierra con tecla Esc
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeMenu();
+    });
+    </script>
+
+
+</body>
+</html>
