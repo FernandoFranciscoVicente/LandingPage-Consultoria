@@ -1,0 +1,103 @@
+.contenedor-seccion-4{
+    width: 100%;
+    min-height: auto;
+    background-image: url(../img/bg-seccion4.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(2rem, 4vw, 6rem) 1.6rem;
+}
+
+.contenido-seccion-4-parte1{
+    background-color: beige;
+    width: min(100%, 1200px);
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem 1.5rem; 
+    place-items: center;
+}
+
+.contenido-seccion-4-parte2{
+    background-color: blue;
+    width: min(100%, 1200px);
+    margin-inline: 1rem;
+    margin-top: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem 1.5rem;
+    place-items: center;
+}
+
+.industrias{
+  background-color: goldenrod;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  padding: 1.6rem;
+  border-radius: 12px; 
+}
+
+.encabezado-contenedor-seccion-4{
+    text-align: center;
+    font-family: "ShantellSansSemiBold", sans-serif;
+    font-size: clamp(1.4rem, 7vw, 5rem);    
+    line-height: 1;
+    margin-bottom: 2rem;
+
+    .remarcado-encabezado-contenedor-seccion-1{
+        color: $morado;
+    }
+    .manchaAmarilla-1{
+        background-image: url(../../../src/img/manchaAmarilla-1.webp);
+        background-position: center 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        white-space: nowrap;
+    }
+    .rayaAzul{
+        background-image: url(../../../src/img/rayaAzul.webp);
+        background-position: center 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        white-space: nowrap;
+    }
+
+}
+
+.parrafo-contenedor-seccion-4{
+    text-align: center;
+    font-family: 'AristaProAlternateBoldtrial';
+    font-size: clamp(1.8rem, 2.5vw, 3rem);
+    line-height: 1;
+    margin: 0;
+    padding: 1rem;
+}
+
+
+.icono-seccion-4{
+  width: clamp(50px, 10vw, 100%);
+  height: auto;
+  display: block;
+  margin-bottom: .8rem;
+}
+
+@media (min-width: 1024px){
+  .contenido-seccion-4-parte1{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .contenido-seccion-4-parte2{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+

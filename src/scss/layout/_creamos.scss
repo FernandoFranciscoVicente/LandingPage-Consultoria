@@ -1,3 +1,151 @@
+// Sección: Creamos
 .contenedor-seccion-1{
-    background-color: red;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(2rem, 4vw, 6rem) 1.6rem;
+
+  .encabezado-contenedor-seccion-1{
+    text-align: center;
+    font-family: "ShantellSansSemiBold", sans-serif;
+    font-size: clamp(1.4rem, 7vw, 5rem);
+    line-height: 1.3;
+    margin: 0;
+    padding: 1rem 1rem 0;
+  }
+
+  .remarcado-encabezado-contenedor-seccion-1{
+    color: $morado; 
+}
+
+  .manchaAmarilla-1{
+    background-image: url(../../../src/img/manchaAmarilla-1.webp);
+    background-position: center 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    white-space: nowrap;
+  }
+
+
+  .subcontenedor-seccion-1{
+    background-color: greenyellow;
+}
+
+  .parrafo-contenedor-seccion-1{
+    text-align: center;
+    font-family: 'AristaProAlternateLighttrial';
+    font-size: clamp(2rem, 2.5vw, 3.3rem);
+    line-height: 1.3;
+    margin: 0;
+    padding: 1rem;
+  }
+}
+
+/* ====== GRID DE 5 / MOBILE-FIRST ====== */
+.contenido-seccion-1{
+  /* centrado horizontal respecto al padre */
+  width: min(100%, 1200px);
+  margin-inline: auto;
+
+  background-color: yellow;
+
+  display: grid;
+  grid-template-columns: 1fr;   
+  gap: clamp(1rem, 7vw, 5rem);
+
+  place-items: center;                  
+}
+
+/* Tarjeta base */
+.solucion1{
+  background-color: aqua;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;                
+  text-align: center;
+  padding: 1.6rem;
+  transition: transform .25s ease;
+}
+
+.icono-seccion1{
+  width: clamp(50%, 10vw, 100%);
+  height: auto;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.titulo-icono-seccion-1{
+    margin:0;
+    line-height: 1.1;
+}
+
+.fondoTitulo{
+    background-image: url(../../../src/img/manchaAmarilla-2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 50%;
+
+}
+
+
+/* Enlaces “Conoce más” */
+.enlace-masInfo{
+  margin-top: .4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: $morado;
+  cursor: pointer;
+  font-family: "fonnts_comAcumin_Pro_SemiCondensed";
+}
+
+.seccion-1-masInfo{
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, opacity .35s ease, margin-top .35s ease;
+  margin-top: 0;
+  line-height: 1;
+  font-family: "AristaProAlternateLighttrial";
+  text-align: justify;
+  font-size: 1.7rem;
+}
+
+.seccion-1-masInfo.is-open{
+  max-height: 600px; 
+  opacity: 1;
+  margin-top: .6rem;
+}
+
+/* ====== BREAKPOINTS ====== */
+/* Tablet chica: 2 columnas */
+@media (min-width: 600px){
+  .contenido-seccion-1{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet/desktop medio: 3 columnas */
+@media (min-width: 900px){
+  .contenido-seccion-1{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .subcontenedor-seccion-1{
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1900px){
+  .contenido-seccion-1{
+    grid-template-columns: repeat(5, 1fr);
+  }
+  /* 3er elemento más grande SOLO en desktop */
+  .contenido-seccion-1 .solucion1:nth-child(3){
+    transform: scale(1.2);                  
+    z-index: 1;                            
+    transform-origin: center;
+  }
 }

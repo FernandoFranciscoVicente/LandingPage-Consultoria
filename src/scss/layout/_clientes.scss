@@ -1,0 +1,111 @@
+//Nuestros clientes
+
+.contenedor-seccion-7{
+  width: 100%;
+  min-height: 73.2rem;             
+  background-image: url(../img/bg-seccion7.webp); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+  padding: 0 2rem;
+  text-align: center;
+
+  @include tablet{
+    height: auto;
+
+    align-items: start;
+    grid-template-rows: auto auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  @include desktop{
+    min-height: 73.2rem;
+  }
+}
+
+.parrafo-contenedor-seccion-7{
+    text-align: center;
+    font-family: 'AristaProAlternateBoldtrial';
+    font-size: clamp(1.8rem, 2.5vw, 3rem);
+    line-height: 1;
+    margin: 0;
+    padding: 1rem;
+    color: $blanco;
+}
+
+.encabezado-clientes{
+    font-size: clamp(2.8rem, 6vw, 6rem);
+    font-weight: 300;
+    line-height: 1.1;
+    padding-top: 3rem;
+    margin: 0 0 2rem 0;
+    color: $blanco;
+}
+
+.contenido-seccion-7-responsive{ 
+    display: none; 
+}
+
+.icono2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img{ max-height: 37rem; }
+}
+
+.img-td{
+  display: block;
+  width: clamp(22rem, 90vw, 120rem);
+  height: auto;
+  object-fit: contain;
+}
+
+@include tablet{
+  .img-td{ width: clamp(28rem, 55vw, 64rem); } 
+}
+
+@include desktop{
+  .img-td{
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px){
+  .contenedor-seccion-7{
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+  
+  .icono2{
+        display: none;
+    }
+
+  .contenido-seccion-7-responsive{  
+        display: grid;
+        grid-template-columns: 1fr;         
+        row-gap: 2.4rem;
+        place-items: center;                 
+        width: 100%;
+        max-width: 100rem;
+        margin: 0 auto;
+
+        .tabla-clientes-1,
+        .tabla-clientes-2{
+          display: grid;
+          place-items: center;
+          width: 100%;
+        }
+
+        img{
+          width: clamp(14rem, 70vw, 36rem);
+          height: auto;
+          object-fit: contain;
+          display: block;
+        }
+    }
+}

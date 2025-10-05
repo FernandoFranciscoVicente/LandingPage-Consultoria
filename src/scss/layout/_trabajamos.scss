@@ -1,0 +1,103 @@
+//Servicio 
+.contenedor-seccion-tres{
+  width: 100%;
+  min-height: 95rem;    
+  background-image: url(../img/bg-seccion9.webp); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  justify-items: center; 
+  align-items: center;    
+  padding: 2rem 2rem 4rem; 
+}
+
+.iconos-nosotros{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  max-width: 120rem; 
+  place-content: center; 
+  justify-items: center; 
+
+  h2{
+    text-align: left;
+    color: $blanco;
+    font-weight: 400;
+    font-family:  "AvenirNextCondensedDemiBold03", sans-serif;
+    font-size: 3.2rem;
+  }
+  p{
+    text-align: justify;
+    color: $negro;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1349px) {
+  .iconos-nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(28rem, 1fr));
+    grid-template-areas:
+      "s1 s2"
+      "s3 s3";
+    column-gap: 2rem;
+    row-gap: 2.4rem;
+    justify-items: center;
+    align-items: center;
+    place-content: center;
+    max-width: 90rem;
+    margin-inline: auto;
+  }
+
+  .icono-servicio-1 { grid-area: s1; }
+  .icono-servicio-2 { grid-area: s2; }
+  .icono-servicio-3 {
+    grid-area: s3;
+    justify-self: center;
+    align-self: center;
+    width: min(40rem, 100%);
+  }
+}
+
+@include tablet {
+  .iconos-nosotros {
+    @include grid(3, 20rem);
+    grid-template-columns: repeat(3, 35rem);
+    justify-content: center; 
+    justify-items: center; 
+    max-width: calc(3 * 35rem + 2 * 2rem);
+    margin-inline: auto; 
+  }
+}
+
+@media (max-width: 1024px) {
+  .iconos-nosotros{
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+  }
+
+  .icono-servicio-1,
+  .icono-servicio-2,
+  .icono-servicio-3 {
+    width: min(35rem, 100%);
+    min-height: auto;
+  }
+
+  .icono-servicio-1 img,
+  .icono-servicio-2 img,
+  .icono-servicio-3 img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.encabezado-seccion-tres{
+    font-size: clamp(3.2rem, 6vw, 6rem); 
+    padding-top:3rem;
+    margin: 0;
+    color: $negro;
+}
+
+

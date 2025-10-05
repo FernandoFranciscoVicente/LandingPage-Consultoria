@@ -1,0 +1,92 @@
+.contenedor-seccion-3{
+    width: 100%;
+    min-height: auto;
+    background-image: url(../img/bg-seccion-0-alternativo.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    display: flex;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.contenedor-somos{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+    width: 100%;
+    max-width: 150rem;
+    justify-content: center;
+    margin: 0;
+}
+
+.titulo-somos{
+    margin: 0 0 1.2rem 0;
+    font-family: "ShantellSansSemiBold";
+    font-size: clamp(2.2rem, 7vw, 6.5rem);
+    line-height: 1.1;
+    color: $blanco;
+    font-weight: 600;
+    text-align: center;
+}
+.par-somos{
+    margin: 0;
+    font-size: clamp(1.6rem, 4.8vw, 2rem);
+    color: $blanco;
+    line-height: .9;
+    text-align: justify;
+}
+.nebulaTecs-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.nebulaTecs-img img{
+    height: auto;
+    object-fit: contain;
+}
+
+@include tablet{
+
+    .contenedor-seccion-3{
+        width: 100%;
+        min-height: 79rem;
+        background-image: url(../img/bg-seccion3.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+        display: flex;
+        justify-content: center;
+        padding: 4rem 2rem;
+    }
+
+    .contenedor-somos{
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 15rem;
+        justify-items: stretch;
+        margin-inline: auto;
+    }
+    .somos-texto{
+        text-align: left;
+    }
+    .titulo-somos{
+        font-size: clamp(3rem, 4.5vw, 8rem);
+        font-weight: bold;
+        text-align: left;
+        color: $blanco;
+        margin-bottom: 4rem;
+    }
+    .par-somos{
+        font-size: clamp(1.8rem, 2vw, 2.2rem);
+        color: $blanco;
+        line-height: 1.4;
+    }
+    .nebulaTecs-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    }
+}

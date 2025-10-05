@@ -1,0 +1,45 @@
+.contenedor-seccion-1{
+    background-color: red;
+
+    .encabezado-contenedor-seccion-1{
+        text-align: center;
+        font-family: "ShantellSansSemiBold", sans-serif;
+        font-size: clamp(1.4rem, 7vw, 5rem);
+        line-height: 1.3;
+        margin: 0;
+        padding: 1rem 1rem 0;
+    }
+    .remarcado-encabezado-contenedor-seccion-1{
+        color: $morado;
+    }
+
+    .manchaAmarilla-1{
+        background-image: url(../../../src/img/manchaAmarilla-1.webp);
+        background-position: center 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        white-space: nowrap;
+    }
+
+    .subcontenedor-seccion-1{
+        background-color: greenyellow;    
+    }
+
+    .parrafo-contenedor-seccion-1{
+        text-align: center;
+        font-family: 'AristaProAlternateLighttrial';
+        font-size: clamp(2rem, 2.5vw, 3.3rem);
+        line-height: 1.3;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .contenido-seccion-1{
+        background-color: yellow;
+    }
+}
+
+.solucion1{
+    background-color: aqua;
+}
+
