@@ -1,5 +1,5 @@
 //Servicio 
-.contenedor-seccion-tres{
+.contenedor-seccion-9{
   width: 100%;
   min-height: 95rem;    
   background-image: url(../img/bg-seccion9.webp); 
@@ -14,7 +14,17 @@
   padding: 2rem 2rem 4rem; 
 }
 
-.iconos-nosotros{
+.parrafo-contenedor-iconos-trabajamos{
+  text-align: center;
+  font-family: "AristaProAlternateLighttrial", sans-serif;
+  font-size: clamp(1.2rem, 4vw, 3.2rem); 
+  line-height: 1;
+  padding: 0;
+  max-width: 150rem; 
+
+}
+
+.iconos-trabajamos{
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
@@ -23,20 +33,46 @@
   justify-items: center; 
 
   h2{
-    text-align: left;
+    text-align: center;
     color: $blanco;
-    font-weight: 400;
-    font-family:  "AvenirNextCondensedDemiBold03", sans-serif;
+    font-family: "AristaProAlternateBoldtrial", sans-serif;
     font-size: 3.2rem;
   }
+
   p{
     text-align: justify;
     color: $negro;
   }
+  
+  .titulo-fondo-mancha1{
+    background-image: url(../../../src/img/manchaAzul3.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center 10%;
+    white-space: nowrap;
+
+  }
+
+  .titulo-fondo-mancha2{
+    background-image: url(../../../src/img/manchaAzul4.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center 10%;
+    white-space: nowrap;
+  }
+
+  .titulo-fondo-mancha1{
+    background-image: url(../../../src/img/manchaAzul5.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center 10%;
+    white-space: nowrap;
+  }
+  
 }
 
 @media (min-width: 768px) and (max-width: 1349px) {
-  .iconos-nosotros {
+  .iconos-trabajamos {
     display: grid;
     grid-template-columns: repeat(2, minmax(28rem, 1fr));
     grid-template-areas:
@@ -51,9 +87,9 @@
     margin-inline: auto;
   }
 
-  .icono-servicio-1 { grid-area: s1; }
-  .icono-servicio-2 { grid-area: s2; }
-  .icono-servicio-3 {
+  .icono-ct-1 { grid-area: s1; }
+  .icono-ct-2 { grid-area: s2; }
+  .icono-ct-3 {
     grid-area: s3;
     justify-self: center;
     align-self: center;
@@ -62,7 +98,7 @@
 }
 
 @include tablet {
-  .iconos-nosotros {
+  .iconos-trabajamos {
     @include grid(3, 20rem);
     grid-template-columns: repeat(3, 35rem);
     justify-content: center; 
@@ -73,31 +109,46 @@
 }
 
 @media (max-width: 1024px) {
-  .iconos-nosotros{
+  .iconos-trabajamos{
     grid-template-columns: 1fr;
     gap: 3.2rem;
   }
 
-  .icono-servicio-1,
-  .icono-servicio-2,
-  .icono-servicio-3 {
+  .icono-ct-1,
+  .icono-ct-2,
+  .icono-ct-3 {
     width: min(35rem, 100%);
     min-height: auto;
   }
 
-  .icono-servicio-1 img,
-  .icono-servicio-2 img,
-  .icono-servicio-3 img {
+  .icono-ct-1 img,
+  .icono-ct-2 img,
+  .icono-ct-3 img {
     width: 100%;
     height: auto;
   }
 }
 
-.encabezado-seccion-tres{
+.encabezado-seccion-9{
+    font-family: "ShantellSansSemiBold", sans-serif;;
     font-size: clamp(3.2rem, 6vw, 6rem); 
     padding-top:3rem;
     margin: 0;
     color: $negro;
+    text-align: center;
+    line-height: 1;
 }
+
+.manchaAzul-2{
+  background-image: url(../../../src/img/manchaAzul2.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center 90%;
+  white-space: nowrap;
+}
+
+
+
+
 
 

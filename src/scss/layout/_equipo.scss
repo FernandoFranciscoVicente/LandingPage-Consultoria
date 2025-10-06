@@ -1,0 +1,90 @@
+.contenedor-seccion-8{
+    width: 100%;
+    min-height: 95rem;    
+    background-image: url(../img/bg-seccion8.webp); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(2rem, 4vw, 6rem) 1.6rem;
+    /* ancho máximo legible y centrado */
+    width: 100%;
+}
+
+.encabezado-seccion-8{
+    font-family: "ShantellSansSemiBold", sans-serif;;
+    font-size: clamp(3.2rem, 6vw, 6rem); 
+    padding-top:3rem;
+    margin: 0 0 1rem 0;
+    color: $negro;
+    text-align: center;
+    line-height: 1;
+
+    .rayaAmarilla{
+        background-image: url(../../../src/img/rayaAmarilla.webp);
+        background-position: center 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        white-space: nowrap;
+    }
+}
+
+.subtitulo-contenedor-seccion-8{
+    font-family: "AristaProAlternateBoldtrial", sans-serif;
+    text-align: center;
+    margin: clamp(1rem, 2vw, 1.6rem) 0 0.6rem;
+    font-size: clamp(1.6rem, 2.6vw, 2.8rem);
+    line-height: 1;
+    max-width: 90rem;
+}
+
+.parrafo-seccion-8{
+    text-align: center;
+    margin: 0;
+    font-size: clamp(1.4rem, 2.1vw, 2rem);
+    line-height: 1;
+    max-width: 100rem;
+    color: #666666;
+}
+
+/* ===== Grid de fotos ===== */
+/* Mobile-first: 2 columnas x 4 filas (8 items) */
+.contenido-seccion-8{
+  /* centra el grid dentro del contenedor padre */
+  width: min(100%, 1400px);
+  margin: clamp(1.6rem, 3vw, 2.4rem) auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 4rem);
+  place-items: center;           /* centra cada tarjeta en su celda */
+}
+
+/* Tarjeta/foto */
+.seccion-8-foto{
+  width: 100%;
+  /* para mantener proporción uniforme; quita si no lo quieres cuadrado */
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;           /* opcional */
+  display: grid;
+  place-items: center;
+  margin: 2rem;
+}
+
+.seccion-8-foto img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             /* rellena sin deformar */
+  display: block;
+}
+
+/* ===== Versión escritorio: 4 columnas x 2 filas ===== */
+@media (min-width: 1024px){
+  .contenido-seccion-8{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    /* gap mantiene separación homogénea en ambas direcciones */
+  }
+}
